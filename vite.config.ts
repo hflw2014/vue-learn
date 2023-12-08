@@ -8,7 +8,7 @@ export default defineConfig({
     port:3009,
     open:true,
     proxy: {
-      '/sys-api': {
+      '/device': {
         target: 'http://localhost:8888',
         changeOrigin: true,
         //rewrite: (path) => path.replace(/^\/sys-api/, ''),

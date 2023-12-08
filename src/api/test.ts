@@ -1,5 +1,5 @@
 import request from "../utils/request"
 
-export function getAllDevices(){
+export function doGetAllDevices(){
     return request.get("/device/list")
 }
