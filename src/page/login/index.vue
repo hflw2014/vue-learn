@@ -2,6 +2,7 @@
 import {reactive} from "vue";
 import {doGetAllDevices} from "../../api/test"
 
+
 interface FormState {
   user: string;
   password: string;
@@ -10,17 +11,37 @@ const formState: UnwrapRef<FormState> = reactive({
       user: '',
       password: '',
     });
-    const handleFinish = (values: FormState) => {
-        console.log("hf_dbg:handleFinish  user:",formState.user," password:",formState.password)
-        doGetAllDevices().then(res => {
-            console.log("res:",res)
-        })
-    };
-    const handleFinishFailed = (errors: ValidateErrorEntity<FormState>) => {
-      console.log(errors);
-    };
+const handleFinish = (values: FormState) => {
+    console.log("hf_dbg:handleFinish  user:",formState.user," password:",formState.password)
+    doGetAllDevices().then(res => {
+        console.log("res:",res)
+    })
+};
+const handleFinishFailed = (errors: ValidateErrorEntity<FormState>) => {
+  console.log(errors);
+};
+
+const dt = {
+  data() {
+    return {
+      message: 'Hello Vue!!',
+      imageSrc:'https://static.runoob.com/images/code-icon-script.png',
+      showMsg:false,
+      stu:[
+        {id:1,name: 'tom'},
+        {id:2,name: 'tony'},
+      ],
+      lightOn:false
+    }
+  }
+}
+
+
+
+
 </script>
 <template>
+  {{message}}
   <a-form
     layout="inline"
     :model="formState"

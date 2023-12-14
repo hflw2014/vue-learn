@@ -13,6 +13,11 @@ export default defineConfig({
         changeOrigin: true,
         //rewrite: (path) => path.replace(/^\/sys-api/, ''),
       },
+      '/vendor': {
+        target: 'http://localhost:8888',
+        changeOrigin: true,
+        //rewrite: (path) => path.replace(/^\/sys-api/, ''),
+      },
     },
   }
 })
