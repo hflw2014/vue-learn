@@ -6,6 +6,7 @@ import VendorManagement from "../components/Vendor.vue"
 import TestManagement from "../components/Test.vue"
 import Test2Management from "../components/Test2.vue"
 import HelloWorld from '../components/HelloWorld.vue'
+import Device from "../list/Device.vue"
 
 const routes:RouteRecordRaw[] = [
     {
@@ -27,6 +28,10 @@ const routes:RouteRecordRaw[] = [
     {
         path: "/hello",
         component:HelloWorld,
+    },
+    {
+        path: "/list",
+        component:Device,
     },
 ];
 const router = createRouter({
